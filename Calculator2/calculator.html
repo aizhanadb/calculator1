@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="calculator">
+            <h3 style ="text-align:center; font-weight:bold; color: #89CFF0; font-size: 40px;">Tip calculator</h3>
+            <label style="text-align: center; color: #87CCED"for="amount">How much was your biil?</label>
+            <br>
+            <input id="amount" type="text">
+            <br>
+            <label for="quality">How was your service?</label>
+            <br>
+            <select name="" id="quality">
+                <option disabled selected value="0"></option>
+                <option value="0.3" >30% - Outstanding</option>
+                <option value="0.2" >20% - Good</option>
+                <option value="0.15" >15% - It was ok</option>
+                <option value="0.1" >10% - Bad</option>
+                <option value="0.05" >5% - Terrible</option>
+            </select>
+            <br>
+            <label for="guests" style="position: relative";> How many people are sharing the bill?</label>
+            <br>
+            <input id="guests" type="text"> 
+            <br>
+                <button class="tip-btn" style="border-radius: 5px; width: fit-content;">Calculate</button>
+                <div>
+                    <p id="tipP" style="visibility: visible;">Tip amount:</p>
+                    <span id="'result" style="visibility: visible">0.00</span>
+                    <span id="each" style="visibility: visible;">Each</span>
+                </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
