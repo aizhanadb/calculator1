@@ -1,22 +1,23 @@
-const amount = document.querySelector('#amount');//cost
-const guests = document.querySelector('#guests');//people
-const quality = document.querySelector('#quality');//service
-const button = document.guerySelector('button');
-const tip = document.querySelector('#tipP');
-const each = document.querySelector('#each');
-const result = document.querySelector('#result');
+const amount = document.getElementById("amount");
+const quality = document.getElementById("quality");
+const guests = document.getElementById("guests");
+const btnCalculate = document.querySelector(".tip-btn");
 
-button.addEventListener('click', () =>{
-    let index = quality.selectedIndex;
-    let percent = Number(amount.value) * Number(quality.options[index].value) / 100;
-    result.style.visibility = 'visible';
-    tip.style.visibility = 'visible';
-    if(guests.value > 1) {
-        result.innerText = (percent / Number(guests.value)).toFixed(2);
-        each.style.visibility = 'visible';
-    }else{
-        result.innerText = percent.toFixed(2);
-        each.style.visibility = 'hidden';
-    }
+const tipAmount = document.getElementById("tip");
+const each = document.getElementById("each");
+
+btnCalculate.addEventListener('click', () => {
+    let bill = Number(amount.value);
+    let tip = Number(quality.value);
+    // console.log(tip)
+    let people = Number(guests.value);
+
+    let perc = bill * tip;
+    let totalResult = (perc + bill) / people;
+    tipAmount.style.visibility = "visible";
+    const totalBill = document.getElementById("result");
+    totalBill.innerHTML = totalResult.toFixed(2);
+    each.style.visibility = "visible";
+    console.log( totalBill);
 })
 
